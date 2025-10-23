@@ -140,8 +140,10 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # CORS
 CORS_ALLOWED_ORIGINS = [
-    "https://nikola-tesla-frontend.onrender.com",  # dominio del frontend
+    "https://nikola-tesla-frontend.onrender.com",#dominio del frontend
+    "https://nikola-tesla-web.onrender.com", 
     "http://localhost:5500",  # entorno local
+    "http://127.0.0.1:5500",
 ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = [
@@ -155,3 +157,5 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
 ]
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
